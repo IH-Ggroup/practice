@@ -9,5 +9,43 @@
     <h1>自己紹介</h1>
     <p>溝口翔斗</p>
     <p>konnitiha</p>
+    <hr>
+    <section id="counter-section" style="font-family: sans-serif; max-width:360px;">
+        <h2>カウンター</h2>
+        <div id="counter" style="font-size:2rem; margin:8px 0;">0</div>
+        <div style="display:flex; gap:8px;">
+            <button id="dec">−</button>
+            <button id="inc">＋</button>
+            <button id="reset">リセット</button>
+        </div>
+    </section>
+
+    <script>
+        (function(){
+            const counterEl = document.getElementById('counter');
+            const incBtn = document.getElementById('inc');
+            const decBtn = document.getElementById('dec');
+            const resetBtn = document.getElementById('reset');
+            let value = 0;
+
+            function render(){
+                counterEl.textContent = value;
+                counterEl.style.color = value > 0 ? 'green' : value < 0 ? 'crimson' : 'black';
+            }
+
+            incBtn.addEventListener('click', ()=>{ value++; render(); });
+            decBtn.addEventListener('click', ()=>{ value--; render(); });
+            resetBtn.addEventListener('click', ()=>{ value = 0; render(); });
+
+            // キーボード操作: 上/下/0
+            window.addEventListener('keydown', (e)=>{
+                if(e.key === 'ArrowUp') { value++; render(); }
+                else if(e.key === 'ArrowDown') { value--; render(); }
+                else if(e.key === '0') { value = 0; render(); }
+            });
+
+            render();
+        })();
+    </script>
 </body>
 </html>
