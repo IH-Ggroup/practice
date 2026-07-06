@@ -4,13 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自己紹介</title>
+    <title>挨拶</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #msg {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>自己紹介</h1>
-    <p>ここに書いてね</p>
-    <a href="rocal">rocal</a>
+
+    <div id="box"></div>
+
+    <div id="msg"></div>
+
+    <script>
+        $("#box").mouseenter(function () {
+            $("#msg").text("こんにちは");
+        });
+
+        $("#box").mouseleave(function () {
+            $("#msg").text("");
+        });
+    </script>
 </body>
 
 </html>
