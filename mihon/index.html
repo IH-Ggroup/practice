@@ -8,6 +8,14 @@
   <body>
     <h1>自己紹介</h1>
     <p>ここに書いてね</p>
-    <p>よろしくお願いします。</p>
+    <button id="alertButton">アラートを表示</button>
+
+    <script>
+      document
+        .getElementById("alertButton")
+        .addEventListener("click", function () {
+          alert("こんにちは！");
+        });
+    </script>
   </body>
 </html>
